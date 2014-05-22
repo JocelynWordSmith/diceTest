@@ -41,7 +41,7 @@
 (function () {
 
 	describe('Function that delays opponent turn then makes a dice', function () {
-		it('should sets opponent.diceSides = player.diceSides', function () {
+		it('should set opponent.diceSides = player.diceSides', function () {
 
 			expect(opponent.diceSides).to.be.equal(player.diceSides);
 		});
