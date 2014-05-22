@@ -31,6 +31,7 @@ $('.submit').click(function(){
 	computer = new Dice(sides);
 //calls dice comparison function
 	rollCompare();
+
 //displays scores
 $('.answer').html('player score: ' + player.score +'<br>computer score: ' + computer.score + '<br> ' + outcome);
 //tells you who won
