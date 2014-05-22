@@ -24,10 +24,7 @@ module.exports = function (grunt) {
     var watchBaseConfig = {
         js: {
             files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
-            tasks: ['jshint'],
-            options: {
-                livereload: true
-            }
+            tasks: ['jshint']
         },
         gruntfile: {
             files: ['Gruntfile.js']
@@ -40,20 +37,6 @@ module.exports = function (grunt) {
             files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
             tasks: ['newer:copy:styles', 'autoprefixer']
         }
-    }
-
-    var watchLivereloadConfig = {
-      livereload: {
-          options: {
-              livereload: '<%= connect.options.livereload %>'
-          },
-          files: [
-              '<%= yeoman.app %>/*.html',
-              '.tmp/styles/{,*/}*.css',
-              '{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
-              '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
-          ]
-      }
     }
 
     var watchTestConfig = {
@@ -80,13 +63,12 @@ module.exports = function (grunt) {
         },
 
         // Watches files for changes and runs tasks based on the changed files
-        watch: extend(watchBaseConfig, watchLivereloadConfig),
+        watch: watchBaseConfig,
 
         // The actual grunt server settings
         connect: {
             options: {
                 port: 9000,
-                livereload: 35728,
                 // Change this to '0.0.0.0' to access the server from outside
                 hostname: 'localhost'
             },
