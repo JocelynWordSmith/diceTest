@@ -93,42 +93,56 @@
         describe('should return the winner of the roll', function () {
             it('as player if player.score is greater than computer.score', function () {
 
-              $('.submit').click(function(){
+              $('.submit').click();
+              var sides = $('.dice-sides').val();
 
-              });
+              var player = sides;
+              var computer = sides;
 
-              player.score = 3;  
-              computer.score = 4;
-
-              expect(player.score).to.be.above(computer.score);
+              expect(player).to.be.above(computer);
             });
         });
     });
 })();	
 
-/*(function () {
-    describe('Endgame Result', function () {
-        describe('test that when computer.score is winner failure message shows', function () {
-            it('should show failure screen if player.score is greater than computer.score', function () {
-              var answer = rollCompare(player.score < computer.score);
-              expect(answer).to.equal(document.write('FAILURE!'));
+(function () {
+    describe('rollCompare function', function () {
+        describe('should return winner of the roll', function () {
+            it('as computer if computer.score is greater than player.score', function () {
+
+              $('.submit').click();
+              var sides = $('.dice-sides').val();
+
+
+              var player = sides;
+              var computer = sides;
+
+              expect(computer).to.be.above(player);
             });
         });
     });
 })();
+
 
 (function () {
-    describe('Endgame Result', function () {
-        describe('test that when player.score is equal to computer.score draw message is shown', function () {
-            it('should show tie screen if player.score == computer.score', function () {
-              var answer = rollCompare(player.score == computer.score);
-              expect(answer).to.equal(document.write('ITS A TIE!'));
+    describe('rollCompare funciton', function () {
+        describe('should return a tie', function () {
+            it('if player.score is equal to computer.score', function () {
+
+              $('.submit').click();
+              var sides = $('.dice-sides').val();
+
+
+              var player = sides;
+              var computer = sides;
+
+              expect(player).to.equal(computer);
             });
         });
     });
 })();
 
-
+/*
 (function () {
     describe('Endgame Result', function () {
         describe('test that function is passed a string', function () {
