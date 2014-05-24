@@ -1,5 +1,7 @@
 
 // constructor that makes first instance roll
+// constructor that makes dice objects
+
 function Dice1 (sides) {
 	this.diceSides = parseInt(sides);
 	this.roll = function () {
@@ -8,7 +10,9 @@ function Dice1 (sides) {
 	this.score = this.roll();	
 };
 
+
 // constructor that makes second instance roll
+
 function Dice2 (sides) {
 	this.diceSides = parseInt(sides);
 	this.roll = function () {
@@ -18,6 +22,7 @@ function Dice2 (sides) {
 };
 
 // constructor that makes third instance roll
+
 function Dice3 (sides) {
 	this.diceSides = parseInt(sides);
 	this.roll = function () {
@@ -43,9 +48,14 @@ function rollCompare (playerScore, computerScore) {
 		$('.winner').html('player score: ' + playerScore + '<br>' + outcome);
 	}
 	
-};
 
-
+$('.submit').click(function() {
+	if ($('.cub-1').hasClass('active')) {
+		$('.cub-1').removeClass('active');
+	} else {
+		$('.cub-1').addClass('active');
+	}
+});
 
 //creates dice
 $('.submit').click(function(){

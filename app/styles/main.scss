@@ -87,3 +87,220 @@ body {
 		}
 	}
 }
+
+
+
+@-webkit-keyframes rotate {
+    0% {
+        -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+    100% {
+        -webkit-transform: rotateX(1800deg) rotateY(360deg) rotateZ(360deg);
+    }
+}
+/* /!\ You need to add vendor prefixes in order to render the CSS properly (or simply use http://leaverou.github.io/prefixfree/) /!\ */ 
+
+#tridiv {
+  perspective: 800px;
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  font-size: 100%;
+
+}
+.face {
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 1);
+}
+.scene, .shape, .face, .face-wrapper, .cr {
+  position: absolute;
+  transform-style: preserve-3d;
+}
+.scene {
+  width: 80em;
+  height: 80em;
+  top: 50%;
+  left: 50%;
+  margin: -40em 0 0 -40em;
+}
+.shape {
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  transform-origin: 50%;
+}
+.face, .face-wrapper {
+  overflow: hidden;
+  transform-origin: 0 0;
+  backface-visibility: hidden;
+  /* hidden by default, prevent blinking and other weird rendering glitchs */
+}
+.face {
+  background-size: 100% 100%!important;
+  background-position: center;
+}
+.face-wrapper .face {
+  left: 100%;
+  width: 100%;
+  height: 100%
+}
+.photon-shader {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%
+}
+.side {
+  left: 50%;
+}
+.cr, .cr .side {
+  height: 100%;
+}
+[class*="cuboid"] .ft, [class*="cuboid"] .bk {
+  width: 100%;
+  height: 100%;
+}
+[class*="cuboid"] .bk {
+  left: 100%;
+}
+[class*="cuboid"] .rt {
+  transform: rotateY(-90deg) translateX(-50%);
+}
+[class*="cuboid"] .lt {
+  transform: rotateY(90deg) translateX(-50%);
+}
+[class*="cuboid"] .tp {
+  transform: rotateX(90deg) translateY(-50%);
+}
+[class*="cuboid"] .bm {
+  transform: rotateX(-90deg) translateY(-50%);
+}
+[class*="cuboid"] .lt {
+  left: 100%;
+}
+[class*="cuboid"] .bm {
+  top: 100%;
+}
+/* .cub-1 styles */
+.cub-1 {
+  transform:translate3D(0em, 0em, 0em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  opacity:1;
+  width:5em;
+  height:5em;
+  margin:-2.5em 0 0 -2.5em;
+
+  &.active {
+    -webkit-animation: rotate 5s; 
+  }
+}
+.cub-1 .ft {
+  transform:translateZ(2.5em);
+}
+.cub-1 .bk {
+  transform:translateZ(-2.5em) rotateY(180deg);
+}
+.cub-1 .rt, .cub-1 .lt {
+  width:5em;
+  height:5em;
+}
+.cub-1 .tp, .cub-1 .bm {
+  width:5em;
+  height:5em;
+}
+.cub-1 .face {
+  background-color:#FFFFFF;
+}
+.cub-1 .ft {
+  background:url(http://www.tilanofresco.com/images/silhouette/stencil_Dice_6_008.jpg);
+}
+.cub-1 .bk {
+  background:url(http://t4.rbxcdn.com/ebfa6f18523256788709057d89d64689);
+}
+.cub-1 .tp {
+  background:url(http://t5.rbxcdn.com/d744586169c946cf0ea3f313e3f66de8);
+}
+.cub-1 .bm {
+  background:url(http://t7.rbxcdn.com/5e7b0e277cce6c3bb84ffc61f8842302);
+}
+.cub-1 .lt {
+  background:url(http://www.speedymath.com/images/dice/4-border.gif);
+}
+.cub-1 .rt {
+  background:url(data:image/jpeg;base64,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);
+}
+.cub-1 .ft {
+  width:5em;
+  margin-left:0em;
+}
+.cub-1 .bk {
+  width:5em;
+  margin-left:0em;
+}
+.cub-1 .rt, .cub-1 .lt {
+  width:5em;
+}
+.cub-1 .tp, .cub-1 .bm, .cub-1 .tp .photon-shader, .cub-1 .bm .photon-shader {
+  border-radius:0em;
+}
+.cub-1 .cr {
+  width:0em;
+  left:0em;
+}
+.cub-1 .cr-0 {
+  transform: translate3D(5em, 0, 2.5em);
+}
+.cub-1 .cr-1 {
+  transform: translate3D(5em, 0, -2.5em);
+}
+.cub-1 .cr-2 {
+  transform: translate3D(0, 0, -2.5em);
+}
+.cub-1 .cr-3 {
+  transform: translate3D(0, 0, 2.5em);
+}
+.cub-1 .cr-0 .s0 {
+  transform: rotateY(15deg) translate3D(-50%, 0, -0.025em);
+}
+.cub-1 .cr-0 .s1 {
+  transform: rotateY(45deg) translate3D(-50%, 0, -0.025em);
+}
+.cub-1 .cr-0 .s2 {
+  transform: rotateY(75deg) translate3D(-50%, 0, -0.025em);
+}
+.cub-1 .cr-1 .s0 {
+  transform: rotateY(105deg) translate3D(-50%, 0, -0.025em);
+}
+.cub-1 .cr-1 .s1 {
+  transform: rotateY(135deg) translate3D(-50%, 0, -0.025em);
+}
+.cub-1 .cr-1 .s2 {
+  transform: rotateY(165deg) translate3D(-50%, 0, -0.025em);
+}
+.cub-1 .cr-2 .s0 {
+  transform: rotateY(195deg) translate3D(-50%, 0, -0.025em);
+}
+.cub-1 .cr-2 .s1 {
+  transform: rotateY(225deg) translate3D(-50%, 0, -0.025em);
+}
+.cub-1 .cr-2 .s2 {
+  transform: rotateY(255deg) translate3D(-50%, 0, -0.025em);
+}
+.cub-1 .cr-3 .s0 {
+  transform: rotateY(285deg) translate3D(-50%, 0, -0.025em);
+}
+.cub-1 .cr-3 .s1 {
+  transform: rotateY(315deg) translate3D(-50%, 0, -0.025em);
+}
+.cub-1 .cr-3 .s2 {
+  transform: rotateY(345deg) translate3D(-50%, 0, -0.025em);
+}
+.cub-1 .side {
+  width:0.025em;
+}
+
+
+
+
