@@ -2,18 +2,18 @@
 /* global describe, it */
 
 'use strict';
-
+/*
 (function () {
   describe('Create Die Button', function () {
       var inputValue = parseInt($('.dice-sides').val('5'));
       // then click the button
       $('.submit').click();
-      /*
+      
       it("should create a die and store it in the diceSides", function(){
         var player = new Dice(5);
         expect(player.diceSides).to.be.equal(5);
         //console.log(player.diceSides);
-      });*/
+      });
 
       it("should create a die with sides equal the input value", function(){
         var inputValue = 10
@@ -34,7 +34,7 @@
       
       });
     });
-})();
+})();*/
 /*
 (function () {
     describe("Dice Constructor", function(){
@@ -155,124 +155,4 @@
 })();	
 */
 
-
-(function () {
-    describe('rollCompare function', function () {
-        describe('should return the winner of the roll', function () {
-            it('as player if player.score is greater than computer.score', function () {
-
-              $('.submit').click();
-              var sides = $('.dice-sides').val();
-
-              var player = sides;
-              var computer = sides;
-
-              expect(player).to.be.above(computer);
-            });
-        });
-    });
-})();	
-
-(function () {
-    describe('rollCompare function', function () {
-        describe('should return winner of the roll', function () {
-            it('as computer if computer.score is greater than player.score', function () {
-
-              $('.submit').click();
-              var sides = $('.dice-sides').val();
-
-
-              var player = sides;
-              var computer = sides;
-
-              expect(computer).to.be.above(player);
-            });
-        });
-    });
-})();
-
-
-(function () {
-    describe('rollCompare funciton', function () {
-        describe('should return a tie', function () {
-            it('if player.score is equal to computer.score', function () {
-
-              $('.submit').click();
-              var sides = $('.dice-sides').val();
-
-
-              var player = sides;
-              var computer = sides;
-
-              expect(player).to.equal(computer);
-            });
-        });
-    });
-})();
-
-/*
-(function () {
-    describe('Endgame Result', function () {
-        describe('test that function is passed a string', function () {
-            it('should show victory screen if player.score is greater than computer.score', function () {
-              var answerS = rollCompare('Draw');
-              var answerA = rollCompare([1,3,4]);
-              var answerO = rollCompare(player);
-              var answerN = rollCompare(7);
-              var answerNaN = rollCompare(NaN);
-              var answerU = rollCompare(player.somethingrandom);
-
-
-
-              expect(answerS).to.equal(gameRestart('Draw'));
-              expect(answerA).to.equal(alert('endgame was passed an array'));
-              expect(answerO).to.equal(alert('endgame was passed an object'));
-              expect(answerN).to.equal(alert('endgame was passed a number'));
-              expect(answerNaN).to.equal(alert('endgame was passed a NaN'));
-              expect(answerU).to.equal(alert('endgame was passed undefined'));
-            });
-        });
-    });
-})();
-
-(function () {	
-
-    describe('opponent roll', function () {
-        describe('opponent roll is number', function () {
-            it('should choose a number for opponent', function () {
-              var answer = opponentRoll();
-              Math.floor(Math.random() * opponent.diceSides + 1)
-              expect(answer).to.be.within(1, player.diceSides);
-            });
-        });
-    });
-})();
-
-
-(function () {
-	describe('opponent roll', function () {
-		describe('opponent dice size', function() {
-			it('should choose number of dice sides for opponent', function() {
-				var opponentDice = opponent.diceSides(number);
-				expect(opponentDice).to.be.within(1, opponent.diceSides)
-			});
-		});
-	});
-})();
-
-
-(function () {
-	describe('opponent roll', function() {
-		it('should assign opponent.diceSides to .diceRoll', function() {
-			var opponentRoll = (opponent.diceSides = opponent.diceRoll);
-			expect(opponentRoll).to.equal(opponent.diceRoll); 
-		});
-	});
-})();
-
-
-<<<<<<< HEAD
-=======
-
-*/
 

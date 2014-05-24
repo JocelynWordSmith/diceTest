@@ -85,7 +85,7 @@ $('.submit').click(function(){
 //calls dice comparison function == added timeout
 	setTimeout(function(){
 	  rollCompare(playerScore, computerScore);
-	},400);
+	},1000);
 	
 
 // Displays player roll
