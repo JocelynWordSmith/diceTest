@@ -95,3 +95,9 @@ $('.answer3').html('player score: ' + player3.score +'<br>computer score: ' + co
 //tells you who won
 
 })
+
+$('.submit').click(function() {
+	$('.cub-1').addClass('active')
+});
+
+

@@ -115,7 +115,10 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
   width:5em;
   height:5em;
   margin:-2.5em 0 0 -2.5em;
-  -webkit-animation: rotate 5s; 
+
+  &.active {
+    -webkit-animation: rotate 5s; 
+  }
 }
 .cub-1 .ft {
   transform:translateZ(2.5em);
@@ -221,3 +224,8 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 .cub-1 .side {
   width:0.025em;
 }
+
+
+
+
+
