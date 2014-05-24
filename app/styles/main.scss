@@ -21,15 +21,14 @@ body {
     	display: block;
     	margin: 0 10px 10px 0;
     	float: left;
-
     }
 
 	.player-rolls {
 	    float: left;
 	    clear: left;
-	    font-size: 25px;
 	    width: 300px; 
 	    height: 300px;
+	    font-size: 25px;
 	    text-align: center;
 	
 
@@ -50,6 +49,15 @@ body {
 		    height: 100px;
 		    background-color: yellow;
 		}
+	}
+
+	.winner {
+		float: left;
+		height: 100px;
+		width: 340px;
+	    background-color: green;
+	    font-size: 25px;
+	    text-align: center;
 	}
 
 	.computer-rolls {

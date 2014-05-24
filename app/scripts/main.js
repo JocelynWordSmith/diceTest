@@ -28,17 +28,21 @@ function Dice3 (sides) {
 
 //defines function to compare dice
 
-function rollCompare () {
+function rollCompare (playerScore, computerScore) {
 
 	if (playerScore > computerScore) {
 		outcome = "VICTORY!";
+		$('.winner').html('player score: '+ playerScore + '<br>'  + outcome);
 	}
 	else if (playerScore < computerScore) {
 		outcome = "FAILURE!";
+		$('.winner').html('player score: ' + playerScore + '<br>'  + outcome);
 	}
 	else if (playerScore == computerScore) {
 		outcome = "ITS A TIE!";
+		$('.winner').html('player score: ' + playerScore + '<br>' + outcome);
 	}
+	
 };
 
 
@@ -56,12 +60,17 @@ $('.submit').click(function(){
 	player3 = new Dice3(sides);
 	computer3 = new Dice3(sides);
 
+	var playerScore = player1.score + player2.score + player3.score;
+	var computerScore = computer1.score + computer2.score + computer3.score;
 
-//calls dice comparison function
-	rollCompare();
-
+//calls dice comparison function == added timeout
+	setTimeout(function(){
+	  rollCompare(playerScore, computerScore);
+	},400);
+	
 
 // Displays player roll
+
 	$('.player-roll1').html('player score: ' + player1.score);
 	$('.player-roll2').html('player score: ' + player2.score);
 	$('.player-roll3').html('player score: ' + player3.score);
