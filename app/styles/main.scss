@@ -11,11 +11,10 @@ body {
 }
 
 .content {
-	margin: 50px auto 50px;
+	margin: 50px auto 0;
 	width: 980px;
 	padding: 20px;
-    background-color: pink;
-    overflow: hidden;
+  overflow: hidden;
 
     .dice-sides {
     	display: block;

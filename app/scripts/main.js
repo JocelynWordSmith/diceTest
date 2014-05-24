@@ -47,19 +47,20 @@ function rollCompare (playerScore, computerScore) {
 		outcome = "ITS A TIE!";
 		$('.winner').html('player score: ' + playerScore + '<br>' + outcome);
 	}
-	
+}	
 
-$('.submit').click(function() {
-	if ($('.cub-1').hasClass('active')) {
-		$('.cub-1').removeClass('active');
-	} else {
-		$('.cub-1').addClass('active');
-	}
-});
 
 //creates dice
 $('.submit').click(function(){
+	
+
 	var sides = $('.dice-sides').val();
+
+	if (sides < 2 || sides > 20) {
+  // something
+  		alert("Please select a number between 2-20");
+  	} else {
+
 //makes new player and computer dice and scores
 	player1 = new Dice1(sides);
 	computer1 = new Dice1(sides);
@@ -69,6 +70,14 @@ $('.submit').click(function(){
 
 	player3 = new Dice3(sides);
 	computer3 = new Dice3(sides);
+
+	if ($('.cub-1').hasClass('active')) {
+		$('.cub-1').removeClass('active');
+	} else {
+		$('.cub-1').addClass('active');
+	}
+
+	}
 
 	var playerScore = player1.score + player2.score + player3.score;
 	var computerScore = computer1.score + computer2.score + computer3.score;
