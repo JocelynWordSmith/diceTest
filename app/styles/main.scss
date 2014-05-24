@@ -14,8 +14,8 @@ body {
 	margin: 50px auto 50px;
 	width: 980px;
 	padding: 20px;
-    background-color: pink;
-    overflow: hidden;
+  background-color: pink;
+  overflow: hidden;
 
     .dice-sides {
     	display: block;
@@ -55,9 +55,9 @@ body {
 		float: left;
 		height: 100px;
 		width: 340px;
-	    background-color: green;
-	    font-size: 25px;
-	    text-align: center;
+	  background-color: green;
+	  font-size: 25px;
+	  text-align: center;
 	}
 
 	.computer-rolls {
@@ -98,6 +98,7 @@ body {
         -webkit-transform: rotateX(1800deg) rotateY(360deg) rotateZ(360deg);
     }
 }
+
 /* /!\ You need to add vendor prefixes in order to render the CSS properly (or simply use http://leaverou.github.io/prefixfree/) /!\ */ 
 
 #tridiv {
@@ -108,7 +109,6 @@ body {
   height: 100%;
   background: transparent;
   font-size: 100%;
-
 }
 .face {
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 1);
@@ -118,7 +118,7 @@ body {
   transform-style: preserve-3d;
 }
 .scene {
-  width: 635px;
+  width: 630px;
   height: 80em;
   top: 50%;
   left: 50%;
