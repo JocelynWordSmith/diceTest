@@ -97,7 +97,13 @@ $('.answer3').html('player score: ' + player3.score +'<br>computer score: ' + co
 })
 
 $('.submit').click(function() {
-	$('.cub-1').addClass('active')
+	if ($('.cub-1').hasClass('active')) {
+		$('.cub-1').removeClass('active');
+	} else {
+		$('.cub-1').addClass('active');
+	}
 });
+
+
 
 
