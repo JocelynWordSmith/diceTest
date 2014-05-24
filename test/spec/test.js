@@ -1,5 +1,8 @@
-<<<<<<< HEAD
+
 /* global describe, it */
+
+'use strict';
+
 (function () {
   describe('Create Die Button', function () {
       var inputValue = parseInt($('.dice-sides').val('5'));
@@ -66,12 +69,6 @@
 })();
 
 */
-
-=======
- // global describe, it */
->>>>>>> dice-roll
-
-'use strict';
 
 /*
 (function () {
@@ -278,4 +275,4 @@
 =======
 
 */
->>>>>>> dice-roll
+
