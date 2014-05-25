@@ -108,7 +108,7 @@ $('.submit').click(function() {
 		$('.computer-roll1').html('computer score: ' + computer1.score);
 		$('.computer-roll2').html('computer score: ' + computer2.score);
 		$('.computer-roll3').html('computer score: ' + computer3.score);
-});
+
 
 //calls dice comparison function == added timeout
 
