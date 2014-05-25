@@ -55,14 +55,20 @@
         expect(player2).to.be.an.instanceof(Dice);
       });
 
-      it("should pass a sides value to instances", function(){
-        var player = new Dice(20);
-        expect(diceSides).to.have.property('sides');
+      it("should pass property values to instances", function(){
+        // passed
+        var computer3 = new Dice();
+        computer3.should.have.property('diceSides')
+        computer3.should.have.property('roll')
+        computer3.should.have.property('score')
       });
  
-      it("should accept a number or a number as a string as its argument", function(){
-        var player = new Dice('10');
-        expect(diceSides.sides).to.equal(10);
+      it("should accept a number as a string as its argument", function(){
+
+        var something = new Dice('10');
+        //console.log(something.diceSides);
+        expect(something.diceSides).to.equal(10);
+
       })
  
       it("should return its min and max values", function(){
