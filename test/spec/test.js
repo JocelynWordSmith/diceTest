@@ -1,18 +1,106 @@
+
 /* global describe, it */
+
 'use strict';
 
 (function () {
+  describe('Constructor button', function () {
+      
+      it("should create a die and store it in the diceSides", function(){
+      // passed
+        var player1 = new Dice1(5);
+        var player2 = new Dice2(5);
+        var player3 = new Dice3(5);
 
-	'use strict';
+        expect(player1.diceSides).to.equal(5);
+        expect(player2.diceSides).to.equal(5);
+        expect(player3.diceSides).to.equal(5);
+      });
+
+      it("should create a die with sides equal the input value", function(){
+        //passed
+        var inputValue = 5;
+        var player3 = new Dice3(inputValue);
+        player3.should.have.property('diceSides', 5)
+
+      });
+      
+      it('should give alert if less than 2 OR larger than 20', function () {
+        /*var inputValue = 90;
+        expect(inputValue(21,100)).to.equal(alert("Please select a number between 2-20."));
+        expect(inputValue(1,-100)).to.equal(alert("Please select a number between 2-20.")); */
+
+          expect(inputValue).to.not.be.above(20);
+      }); 
+
+
+      it('should give alert if NaN', function () {
+
+        expect(inputValue(NaN)).to.equal();
+      
+      });
+
+      it('should call rollcompare function with arguments', function () {
+
+        function rollCompare () {
+          expect(playerScore, computerScore).to.be.arguments;
+        }
+      
+      });
+
+    });
+})();
+
+(function () {
+    describe("Dice Constructor", function(){
+
+      it("should assert that the target is an instance of constructor.", function(){
+        // passed
+        var player2 = new Dice2('sides');
+        expect(player2).to.be.an.instanceof(Dice2);
+      
+      });
+
+      it("should pass a sides value to instances", function(){
+        var player = new Dice(20);
+        expect(diceSides).to.have.property('sides');
+      });
+ 
+      it("should accept a number or a number as a string as its argument", function(){
+        var player = new Dice('10');
+        expect(diceSides.sides).to.equal(10);
+      })
+ 
+      it("should return its min and max values", function(){
+          var player = new Dice('7');
+          for (var i = 0; i < 1000; i += 1) {
+            expect(die.roll()).to.be.within(1,7);
+          }
+      })
+
+      it("dice roll should be within die side range", function(){
+
+// rather than putting math.floor within the test should I not just place the object method define in our main.js?
+          expect(Dice.roll(sides)).to.be.within(1, player.diceSides);
+      })    
+
+      it("Should test for timeout??", function(){
+          setTimeout(done, 1000);
+      })
+    })
+})();
+
+/*
+(function () {
 
 	describe('If it works, assign that number to player.diceSides', function () {
 		it('should set player.dice if input valid', function () {
 			// this is a function. values passed should be >=2 and <20 
 			var testInput = 10;
-			
+
 			// passing value to the function
 			inputValue(testInput);
-			
+
 			// assign that number to player.diceSides
 			expect(player.diceSides).to.equal(testInput);
 		});
@@ -50,7 +138,7 @@
 	});
 })();
 
-
+(function () {
     describe('input valid', function () {
         describe('input valid type: number', function () {
             it('should give alert if NaN', function () {
@@ -85,81 +173,6 @@
         });
     });
 })();	
-
-(function () {
-    describe('Endgame Result', function () {
-        describe('test that when player.diceRoll is winner victory message shows', function () {
-            it('should show victory screen if player.diceRoll is greater than opponent.diceRoll', function () {
-              var answer = endgameResult('Victory');
-              expect(answer).to.equal(document.write('Victory is yours!'));
-            });
-        });
-    });
-})();	
-
-(function () {
-    describe('Endgame Result', function () {
-        describe('test that when opponent.diceRoll is winner failure message shows', function () {
-            it('should show victory screen if player.diceRoll is greater than opponent.diceRoll', function () {
-              var answer = endgameResult('Failure');
-              expect(answer).to.equal(document.write('The Computer has won. You lose'));
-            });
-        });
-    });
-})();
-
-(function () {
-    describe('Endgame Result', function () {
-        describe('test that when player.diceRoll is equal to opponent.diceRoll draw message is shown', function () {
-            it('should show victory screen if player.diceRoll is greater than opponent.diceRoll', function () {
-              var answer = endgameResult('Draw');
-              expect(answer).to.equal(document.write('The Game is a draw'));
-            });
-        });
-    });
-})();
-
-(function () {
-    describe('Endgame Result', function () {
-        describe('test that function is passed a string', function () {
-            it('should show victory screen if player.diceRoll is greater than opponent.diceRoll', function () {
-              var answerS = endgameResult('Draw');
-              var answerA = endgameResult([1,3,4]);
-              var answerO = endgameResult(player);
-              var answerN = endgameResult(7);
-              var answerNaN = endgameResult(NaN);
-              var answerU = endgameResult(player.somethingrandom);
-
-
-
-              expect(answerS).to.equal(gameRestart('Draw'));
-              expect(answerA).to.equal(alert('endgame was passed an array'));
-              expect(answerO).to.equal(alert('endgame was passed an object'));
-              expect(answerN).to.equal(alert('endgame was passed a number'));
-              expect(answerNaN).to.equal(alert('endgame was passed a NaN'));
-              expect(answerU).to.equal(alert('endgame was passed undefined'));
-            });
-        });
-    });
-})();
-
-
-
-(function () {
-    describe('Game Restart', function () {
-        describe('test that endgame occurs, reset option is triggered', function () {
-            it('should trigger gameRestart if passed endgame condition and clear player object', function () {
-              var answerDraw = gameRestart('Draw');
-              var answerLose = gameRestart('Failure');
-              var answerWin = gameRestart('Victory');
-
-              expect(answerDraw).to.equal(player);
-              expect(answerLose).to.equal(player);
-              expect(answerWin).to.equal(player);
-            });
-        });
-    });
-})();
-
+*/
 
 
