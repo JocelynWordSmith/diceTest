@@ -7,9 +7,9 @@
   describe('Constructor button', function () {
       $('.submit').click()
       var inputValue = 5;
-      var player1 = new Dice1(inputValue);
-      var player2 = new Dice2(inputValue);
-      var player3 = new Dice3(inputValue);
+      var player1 = new Dice(inputValue);
+      var player2 = new Dice(inputValue);
+      var player3 = new Dice(inputValue);
 
       it("should create a die and store it in the diceSides", function(){
       // passed

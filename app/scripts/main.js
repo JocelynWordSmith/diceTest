@@ -1,28 +1,7 @@
 
 // constructor that makes first instance roll
-
-function Dice1 (sides) {
-	this.diceSides = parseInt(sides);
-	this.roll = function () {
-		return result = (Math.floor(Math.random() * sides) + 1)
-	};
-	this.score = this.roll();	
-};
-
-
-// constructor that makes second instance roll
-
-function Dice2 (sides) {
-	this.diceSides = parseInt(sides);
-	this.roll = function () {
-		return result = (Math.floor(Math.random() * sides) + 1)
-	};
-	this.score = this.roll();	
-};
-
-// constructor that makes third instance roll
-
-function Dice3 (sides) {
+// We know! It can be a lot smaller! was trying to take away testing from this project ~ H.A.
+function Dice (sides) {
 	this.diceSides = parseInt(sides);
 	this.roll = function () {
 		return result = (Math.floor(Math.random() * sides) + 1)
@@ -64,14 +43,14 @@ $('.submit').click(function(){
   	} else {
 	
 	//else make a new player and computer
-		player1 = new Dice1(sides);
-		computer1 = new Dice1(sides);
+		player1 = new Dice(sides);
+		computer1 = new Dice(sides);
 		
-		player2 = new Dice2(sides);
-		computer2 = new Dice2(sides);
+		player2 = new Dice(sides);
+		computer2 = new Dice(sides);
 
-		player3 = new Dice3(sides);
-		computer3 = new Dice3(sides);
+		player3 = new Dice(sides);
+		computer3 = new Dice(sides);
 
 	// created an if else statement to prevent die from spinning during an alert message.
 	// NEED to add something to make have class when inbetween rolls.
