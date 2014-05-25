@@ -2,24 +2,30 @@
 /* global describe, it */
 
 'use strict';
-/*
+
 (function () {
-  describe('Create Die Button', function () {
+  describe('Constructor button', function () {
       var inputValue = parseInt($('.dice-sides').val('5'));
       // then click the button
       $('.submit').click();
       
       it("should create a die and store it in the diceSides", function(){
-        var player = new Dice(5);
-        expect(player.diceSides).to.be.equal(5);
-        //console.log(player.diceSides);
+        var player1 = new Dice1(5);
+        var player2 = new Dice2(5);
+        var player3 = new Dice3(5);
+
+        expect(player1.diceSides).to.equal(5);
+        expect(player2.diceSides).to.equal(5);
+        expect(player3.diceSides).to.equal(5);
       });
+      
 
       it("should create a die with sides equal the input value", function(){
-        var inputValue = 10
-        expect(Dice).to.have.property(Dice.diceSides, inputValue);
+        var inputValue = '10'
+        expect(Dice3).to.have.property(10);
       
       });
+/*
       
       it('should give alert if less than 2 OR larger than 20', function () {
         
@@ -32,12 +38,19 @@
 
         expect(inputValue(NaN)).to.equal(alert('not a number, select a number 2-20'));
       
-      });
+      });*/
     });
-})();*/
-/*
-(function () {
+})();
+
+/*(function () {
     describe("Dice Constructor", function(){
+
+        it("should assert that the target is an instance of constructor.", function(){
+        var player2 = new Dice2('sides');
+        expect(player2).to.be.an.instanceof(Dice2);
+      
+      });
+
  
       it("should pass a sides value to instances", function(){
         var player = new Dice(20);
@@ -66,9 +79,9 @@
           setTimeout(done, 1000);
       })
     })
-})();
+})();*/
 
-*/
+
 
 /*
 (function () {

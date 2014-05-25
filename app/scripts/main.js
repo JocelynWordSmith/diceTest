@@ -1,6 +1,5 @@
 
 // constructor that makes first instance roll
-// constructor that makes dice objects
 
 function Dice1 (sides) {
 	this.diceSides = parseInt(sides);
@@ -57,46 +56,52 @@ $('.submit').click(function(){
 	var sides = $('.dice-sides').val();
 
 	if (sides < 2 || sides > 20) {
-  // something
-  		alert("Please select a number between 2-20");
+	// alert if number is greater than 20 or less than 2
+  		alert("Please select a number between 2-20.");
+  	} else if (isNaN(sides)) {
+  	// alert if number is greater than 20 or less than 2
+  		alert("Entry is not a number. Please select a number between 2-20");
   	} else {
-
-//makes new player and computer dice and scores
-	player1 = new Dice1(sides);
-	computer1 = new Dice1(sides);
 	
-	player2 = new Dice2(sides);
-	computer2 = new Dice2(sides);
+	//else make a new player and computer
+		player1 = new Dice1(sides);
+		computer1 = new Dice1(sides);
+		
+		player2 = new Dice2(sides);
+		computer2 = new Dice2(sides);
 
-	player3 = new Dice3(sides);
-	computer3 = new Dice3(sides);
+		player3 = new Dice3(sides);
+		computer3 = new Dice3(sides);
 
-	if ($('.cub-1').hasClass('active')) {
-		$('.cub-1').removeClass('active');
-	} else {
-		$('.cub-1').addClass('active');
-	}
+	// created an if else statement to prevent die from spinning during an alert message.
+	// NEED to add something to make have class when inbetween rolls.
+		if ($('.cub-1').hasClass('active')) {
+			$('.cub-1').removeClass('active');
+		} else {
+			$('.cub-1').addClass('active');
+		}
 
-	}
+		}
 
-	var playerScore = player1.score + player2.score + player3.score;
-	var computerScore = computer1.score + computer2.score + computer3.score;
+		var playerScore = player1.score + player2.score + player3.score;
+		var computerScore = computer1.score + computer2.score + computer3.score;
 
-//calls dice comparison function == added timeout
-	setTimeout(function(){
-	  rollCompare(playerScore, computerScore);
-	},1000);
-	
+	//calls dice comparison function == added timeout
+		setTimeout(function(){
+		  rollCompare(playerScore, computerScore);
+		},1000);
+		
 
-// Displays player roll
+	// Displays player roll
 
-	$('.player-roll1').html('player score: ' + player1.score);
-	$('.player-roll2').html('player score: ' + player2.score);
-	$('.player-roll3').html('player score: ' + player3.score);
+		$('.player-roll1').html('player score: ' + player1.score);
+		$('.player-roll2').html('player score: ' + player2.score);
+		$('.player-roll3').html('player score: ' + player3.score);
 
-// Displays computer roll
-	$('.computer-roll1').html('computer score: ' + computer1.score);
-	$('.computer-roll2').html('computer score: ' + computer2.score);
-	$('.computer-roll3').html('computer score: ' + computer3.score);
+	// Displays computer roll
+		$('.computer-roll1').html('computer score: ' + computer1.score);
+		$('.computer-roll2').html('computer score: ' + computer2.score);
+		$('.computer-roll3').html('computer score: ' + computer3.score);
+
 
 })
