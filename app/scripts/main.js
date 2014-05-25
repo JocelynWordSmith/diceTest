@@ -1,5 +1,4 @@
 
-// <<<<<<< HEAD
 // // constructor that makes dice objects
 // function Dice (sides) {
 // 	this.diceSides = sides;
@@ -36,8 +35,6 @@
 // //tells you who won
 // rollCompare();
 // })
-
-// =======
 
 // constructor that makes first instance roll
 
@@ -87,7 +84,7 @@ function rollCompare (playerScore, computerScore) {
 		$('.winner').html('player score: ' + playerScore + '<br>' + outcome);
 	}
 
-}	
+};
 	
 //adds or removes class to make dice roll
 
