@@ -29,9 +29,8 @@
         /*var inputValue = 90;
         expect(inputValue(21,100)).to.equal(alert("Please select a number between 2-20."));
         expect(inputValue(1,-100)).to.equal(alert("Please select a number between 2-20.")); */
-        var player3 = new Dice3(90);
-        console.log(player3);
-        expect(player3.diceSides).to.not.be.within(sides, sides);
+
+          expect(inputValue).to.not.be.above(20);
       }); 
 
 
@@ -55,14 +54,13 @@
 (function () {
     describe("Dice Constructor", function(){
 
-        it("should assert that the target is an instance of constructor.", function(){
+      it("should assert that the target is an instance of constructor.", function(){
         // passed
         var player2 = new Dice2('sides');
         expect(player2).to.be.an.instanceof(Dice2);
       
       });
 
- 
       it("should pass a sides value to instances", function(){
         var player = new Dice(20);
         expect(diceSides).to.have.property('sides');
