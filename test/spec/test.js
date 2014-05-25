@@ -5,11 +5,9 @@
 
 (function () {
   describe('Constructor button', function () {
-      var inputValue = parseInt($('.dice-sides').val('5'));
-      // then click the button
-      $('.submit').click();
       
       it("should create a die and store it in the diceSides", function(){
+      // passed
         var player1 = new Dice1(5);
         var player2 = new Dice2(5);
         var player3 = new Dice3(5);
@@ -18,34 +16,47 @@
         expect(player2.diceSides).to.equal(5);
         expect(player3.diceSides).to.equal(5);
       });
-      
 
       it("should create a die with sides equal the input value", function(){
-        var inputValue = '10'
-        expect(Dice3).to.have.property(10);
-      
+        //passed
+        var inputValue = 5;
+        var player3 = new Dice3(inputValue);
+        player3.should.have.property('diceSides', 5)
+
       });
-/*
       
       it('should give alert if less than 2 OR larger than 20', function () {
-        
-        expect(inputValue(21,100000000)).to.equal(alert('select number between 2-20'));
-        expect(inputValue(1,-100)).to.equal(alert('select number between 2-20')); 
-      
+        /*var inputValue = 90;
+        expect(inputValue(21,100)).to.equal(alert("Please select a number between 2-20."));
+        expect(inputValue(1,-100)).to.equal(alert("Please select a number between 2-20.")); */
+        var player3 = new Dice3(90);
+        console.log(player3);
+        expect(player3.diceSides).to.not.be.within(sides, sides);
       }); 
+
 
       it('should give alert if NaN', function () {
 
-        expect(inputValue(NaN)).to.equal(alert('not a number, select a number 2-20'));
+        expect(inputValue(NaN)).to.equal();
       
-      });*/
+      });
+
+      it('should call rollcompare function with arguments', function () {
+
+        function rollCompare () {
+          expect(playerScore, computerScore).to.be.arguments;
+        }
+      
+      });
+
     });
 })();
 
-/*(function () {
+(function () {
     describe("Dice Constructor", function(){
 
         it("should assert that the target is an instance of constructor.", function(){
+        // passed
         var player2 = new Dice2('sides');
         expect(player2).to.be.an.instanceof(Dice2);
       
@@ -79,9 +90,7 @@
           setTimeout(done, 1000);
       })
     })
-})();*/
-
-
+})();
 
 /*
 (function () {
