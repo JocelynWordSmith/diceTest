@@ -20,7 +20,7 @@
 			expect(parseInt(computer.diceSides)).to.be.within(1,10);
 		});
 		it('should put the information on the page', function () {
-			expect($('.answer').html().length).to.equal(('player score: ' + player.score +'<br>computer score: ' + computer.score + '<br><h1> ' + outcome + '</h1>').length)
+			expect($('.answer').html().length).to.equal(('player score: ' + player.score +'<br>computer score: ' + computer.score + '<br> ' + outcome).length)
 		});
 	});
 })();
