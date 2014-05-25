@@ -97,3 +97,16 @@ $('.submit').click(function() {
 	$('.computer-roll3').html('computer score: ' + computer3.score);
 
 });
+
+
+$('.reset').click(function() {
+	$('.dice-sides').val('');
+	$('.player-roll1').html('');
+	$('.player-roll2').html('');
+	$('.player-roll3').html('');
+	$('.computer-roll1').html('');
+	$('.computer-roll2').html('');
+	$('.computer-roll3').html('');
+	$('.winner').html('');
+	$('.cub-1').removeClass('active');
+});
