@@ -51,8 +51,8 @@
 
       it("should assert that the target is an instance of constructor.", function(){
         // passed
-        var player2 = new Dice2('sides');
-        expect(player2).to.be.an.instanceof(Dice2);
+        var player2 = new Dice('sides');
+        expect(player2).to.be.an.instanceof(Dice);
       });
 
       it("should pass a sides value to instances", function(){

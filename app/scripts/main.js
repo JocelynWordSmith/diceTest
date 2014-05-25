@@ -1,6 +1,5 @@
 
-// constructor that makes first instance roll
-// We know! It can be a lot smaller! was trying to take away testing from this project ~ H.A.
+// constructor that makes instance roll
 function Dice (sides) {
 	this.diceSides = parseInt(sides);
 	this.roll = function () {
@@ -26,7 +25,6 @@ function rollCompare (playerScore, computerScore) {
 		$('.winner').html('player score: ' + playerScore + '<br>' + outcome);
 	}
 }	
-
 
 //creates dice
 $('.submit').click(function(){
@@ -60,8 +58,6 @@ $('.submit').click(function(){
 			$('.cub-1').addClass('active');
 		}
 
-	
-
 		var playerScore = player1.score + player2.score + player3.score;
 		var computerScore = computer1.score + computer2.score + computer3.score;
 
@@ -69,7 +65,6 @@ $('.submit').click(function(){
 		setTimeout(function(){
 		  rollCompare(playerScore, computerScore);
 		},1000);
-		
 
 	// Displays player roll
 
