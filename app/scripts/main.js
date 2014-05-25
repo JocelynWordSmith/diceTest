@@ -1,5 +1,4 @@
 
-
 // constructor that makes first instance roll
 
 function Dice1 (sides) {
@@ -9,6 +8,7 @@ function Dice1 (sides) {
 	};
 	this.score = this.roll();	
 };
+
 
 // constructor that makes second instance roll
 
@@ -46,19 +46,13 @@ function rollCompare (playerScore, computerScore) {
 		outcome = "ITS A TIE!";
 		$('.winner').html('player score: ' + playerScore + '<br>' + outcome);
 	}
-
 }	
+
+
+//creates dice
+$('.submit').click(function(){
 	
-//adds or removes class to make dice roll
 
-$('.submit').click(function() {
-	var sides = $('.dice-sides').val();
-
-//makes new player and computer dice and scores
-
-	player1 = new Dice1(sides);
-	computer1 = new Dice1(sides);
-	
 	var sides = $('.dice-sides').val();
 
 	if (sides < 2 || sides > 20) {
@@ -87,7 +81,7 @@ $('.submit').click(function() {
 			$('.cub-1').addClass('active');
 		}
 
-		}
+	
 
 		var playerScore = player1.score + player2.score + player3.score;
 		var computerScore = computer1.score + computer2.score + computer3.score;
@@ -108,29 +102,8 @@ $('.submit').click(function() {
 		$('.computer-roll1').html('computer score: ' + computer1.score);
 		$('.computer-roll2').html('computer score: ' + computer2.score);
 		$('.computer-roll3').html('computer score: ' + computer3.score);
-});
-
-//calls dice comparison function == added timeout
-
-		setTimeout(function() {
-		  rollCompare(playerScore, computerScore);
-		},400);
-		
-
-// Displays player roll
-
-	$('.player-roll1').html('player score: ' + player1.score);
-	$('.player-roll2').html('player score: ' + player2.score);
-	$('.player-roll3').html('player score: ' + player3.score);
-
-// Displays computer roll
-
-	$('.computer-roll1').html('computer score: ' + computer1.score);
-	$('.computer-roll2').html('computer score: ' + computer2.score);
-	$('.computer-roll3').html('computer score: ' + computer3.score);
-
-});
-
+	}
+})
 
 $('.reset').click(function() {
 	$('.dice-sides').val('');
