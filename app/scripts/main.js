@@ -88,9 +88,7 @@ $('.submit').click(function(){
 	if (sides < 2 || sides > 20) {
 	// alert if number is greater than 20 or less than 2
 	    alert('Please select a number between 2-20.');
-  		// alert("Please select a number between 2-20.");
   	} else if (isNaN(sides)) {
-  	// alert if number is greater than 20 or less than 2
   		alert("Entry is not a number. Please select a number between 2-20");
   	} else {
 	//else make a new player and computer
@@ -130,3 +128,5 @@ $('.reset').click(function() {
 	$('.cub-1').removeClass('active');
 	var p = 0, c = 0; 
 });
+
+
