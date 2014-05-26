@@ -17,17 +17,17 @@ function rollCompare () {
 
 	if (playerScore > computerScore) {
 		outcome = "YOU WIN!";
-		$('.wintext').html('Player total: ' + playerScore + '<br>Computer total: '+ computerScore + '<br>'  + outcome);
+		$('.wintext').html('Player Score: ' + playerScore + '<br>Computer Score: '+ computerScore + '<br>'  + outcome);
 		winRecord();
 	}
 	else if (playerScore < computerScore) {
 		outcome = "YOU LOSE!";
-		$('.wintext').html('Player total: ' + playerScore + '<br>Computer total: '+ computerScore + '<br>'  + outcome);
+		$('.wintext').html('Player Score: ' + playerScore + '<br>Computer Score: '+ computerScore + '<br>'  + outcome);
 		winRecord();
 	}
 	else if (playerScore == computerScore) {
 		outcome = "ITS A TIE!";
-		$('.wintext').html('Player total: ' + playerScore + '<br>Computer total: '+ computerScore + '<br>'  + outcome);
+		$('.wintext').html('Player Score: ' + playerScore + '<br>Computer Score: '+ computerScore + '<br>'  + outcome);
 		winRecord();
 	}
 };
