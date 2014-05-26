@@ -2,27 +2,7 @@
 
 // constructor that makes first instance roll
 
-function Dice1 (sides) {
-	this.diceSides = parseInt(sides);
-	this.roll = function () {
-		return result = (Math.floor(Math.random() * sides) + 1)
-	};
-	this.score = this.roll();	
-};
-
-// constructor that makes second instance roll
-
-function Dice2 (sides) {
-	this.diceSides = parseInt(sides);
-	this.roll = function () {
-		return result = (Math.floor(Math.random() * sides) + 1)
-	};
-	this.score = this.roll();	
-};
-
-// constructor that makes third instance roll
-
-function Dice3 (sides) {
+function Dice (sides) {
 	this.diceSides = parseInt(sides);
 	this.roll = function () {
 		return result = (Math.floor(Math.random() * sides) + 1)
@@ -47,7 +27,7 @@ function rollCompare (playerScore, computerScore) {
 		$('.winner').html('player score: ' + playerScore + '<br>' + outcome);
 	}
 
-}	
+};
 	
 //adds or removes class to make dice roll
 
@@ -55,29 +35,24 @@ $('.submit').click(function() {
 	var sides = $('.dice-sides').val();
 
 //makes new player and computer dice and scores
-
-	player1 = new Dice1(sides);
-	computer1 = new Dice1(sides);
-	
-	var sides = $('.dice-sides').val();
-
 	if (sides < 2 || sides > 20) {
 	// alert if number is greater than 20 or less than 2
-  		alert("Please select a number between 2-20.");
+	    var err = new ReferenceError('Please select a number between 2-20.')
+  		// alert("Please select a number between 2-20.");
   	} else if (isNaN(sides)) {
   	// alert if number is greater than 20 or less than 2
   		alert("Entry is not a number. Please select a number between 2-20");
   	} else {
 	
 	//else make a new player and computer
-		player1 = new Dice1(sides);
-		computer1 = new Dice1(sides);
+		player1 = new Dice(sides);
+		computer1 = new Dice(sides);
 		
-		player2 = new Dice2(sides);
-		computer2 = new Dice2(sides);
+		player2 = new Dice(sides);
+		computer2 = new Dice(sides);
 
-		player3 = new Dice3(sides);
-		computer3 = new Dice3(sides);
+		player3 = new Dice(sides);
+		computer3 = new Dice(sides);
 
 	// created an if else statement to prevent die from spinning during an alert message.
 	// NEED to add something to make have class when inbetween rolls.
@@ -86,9 +61,7 @@ $('.submit').click(function() {
 		} else {
 			$('.cub-1').addClass('active');
 		}
-
-		}
-
+	}
 		var playerScore = player1.score + player2.score + player3.score;
 		var computerScore = computer1.score + computer2.score + computer3.score;
 
