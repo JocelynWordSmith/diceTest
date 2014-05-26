@@ -1,3 +1,6 @@
+//variables for wins tracker
+var p = 0, c = 0; 
+
 // constructor that makes instance roll
 
 function Dice (sides) {
@@ -14,17 +17,39 @@ function rollCompare (playerScore, computerScore) {
 
 	if (playerScore > computerScore) {
 		outcome = "YOU WIN!";
-		$('.winner').html('player score: ' + playerScore + '<br>computer score: '+ computerScore + '<br>'  + outcome);
+		$('.wintext').html('Player total: ' + playerScore + '<br>Computer total: '+ computerScore + '<br>'  + outcome);
+		winRecord();
 	}
 	else if (playerScore < computerScore) {
 		outcome = "YOU LOSE!";
-		$('.winner').html('player score: ' + playerScore + '<br>computer score: '+ computerScore + '<br>'  + outcome);
+		$('.wintext').html('Player total: ' + playerScore + '<br>Computer total: '+ computerScore + '<br>'  + outcome);
+		winRecord();
 	}
 	else if (playerScore == computerScore) {
 		outcome = "ITS A TIE!";
-		$('.winner').html('player score: ' + playerScore + '<br>computer score: '+ computerScore + '<br>'  + outcome);
+		$('.wintext').html('Player total: ' + playerScore + '<br>Computer total: '+ computerScore + '<br>'  + outcome);
+		winRecord();
 	}
 };
+
+//record keeping for games won
+function winRecord () {
+	if(outcome == 'YOU WIN!'){
+		p += 1;
+	}
+	else if(outcome == 'YOU LOSE!'){
+		c += 1;
+	}
+	else if(outcome == 'ITS A TIE!'){
+		p += 1;
+		c += 1;
+	}
+
+	$('.player-wins').html('wins: ' + p);
+	$('.computer-wins').html('wins: ' + c)
+
+
+}
 
 
 //creates dice
@@ -50,15 +75,16 @@ $('.submit').click(function(){
 
 		player3 = new Dice(sides);
 		computer3 = new Dice(sides);
+	
+	//sets the class to make the die animate, waits until anim is done, removes class
+		$('.cub-1').addClass('active');
+		$('#tridiv').addClass('slide');
 
-	// created an if else statement to prevent die from spinning during an alert message.
-	// NEED to add something to make have class when inbetween rolls.
-		if ($('.cub-1').hasClass('active')) {
+		setTimeout(function() {
 			$('.cub-1').removeClass('active');
-		} else {
-			$('.cub-1').addClass('active');
-			$('.bound').addClass('slide');
-		}
+			$('#tridiv').removeClass('slide');
+		},2000)
+		
 
 		var playerScore = player1.score + player2.score + player3.score;
 		var computerScore = computer1.score + computer2.score + computer3.score;
@@ -67,7 +93,7 @@ $('.submit').click(function(){
 
 		setTimeout(function() {
 		  rollCompare(playerScore, computerScore);
-		},400);
+		},2000);
 		
 
 	// Displays player roll
@@ -81,8 +107,12 @@ $('.submit').click(function(){
 		$('.computer-roll1').html('computer score: ' + computer1.score);
 		$('.computer-roll2').html('computer score: ' + computer2.score);
 		$('.computer-roll3').html('computer score: ' + computer3.score);
+
+		
 	}
 });
+
+
 
 
 $('.reset').click(function() {

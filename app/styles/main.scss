@@ -10,96 +10,78 @@ body {
     color: #333;
 }
 
+.score-box {
+        margin: 5px;
+        padding: 20px;
+        height: 100px;
+        width: 290px;
+        background-color: #CFFFFF;
+        border-radius: 3px;
+        font-size: 25px;
+}
+
 .content {
-	margin: 50px auto 0;
-	width: 980px;
-	padding: 20px;
+  margin: 50px auto 0;
+  width: 980px;
+  padding: 20px;
   overflow: hidden;
+  background-color: #E6E6E6;
+  border-radius: 3px;
+
 
     .dice-sides {
-    	display: block;
-    	margin: 0 10px 10px 0;
-    	float: left;
+      display: block;
+      margin: 0 10px 10px 35%;
+      float: left;
+      border-radius: 3px;
     }
 
-	.player-rolls {
-	    float: left;
-	    clear: left;
-	    width: 300px; 
-	    height: 300px;
-	    font-size: 25px;
-	    text-align: center;
-	
+  .player-rolls {
+      float: left;
+      clear: left;
+      text-align: center;
+      background-color: #75BFBF;
+  }
 
-		.player-roll1 {
-		    padding: 20px;
-		    height: 100px;
-		    background-color: blue;
-		}
-
-		.player-roll2 { 
-		    padding: 20px;
-		    height: 100px;
-		    background-color: red;
-		}
-
-		.player-roll3 {
-		    padding: 20px;
-		    height: 100px;
-		    background-color: yellow;
-		}
-	}
-
-	.winner {
-		float: left;
-		height: 100px;
-		width: 340px;
-    font-size: 25px;
+  .winner {
+    float: left;
+    padding-top: 75px;
+    margin-top: 55px;
+    height: 320px;
+    width: 340px;
+    font-size: 40px;
     text-align: center;
-	}
+    background-color: #75BFBF;
+  }
+  .wintext {
+    width: 340px;
+    height: 171px;
+    background-color: #CFFFFF;
+    border-radius: 3px;
+  }
 
-	.computer-rolls {
-	    float: right;
-	    font-size: 25px;
-	    width: 300px; 
-	    height: 300px;
-	    text-align: center;
-
-		.computer-roll1 {
-		    padding: 20px;
-		    height: 100px;
-		    background-color: blue;
-		}
-
-		.computer-roll2 {
-			padding: 20px;
-		    height: 100px;
-			background-color: red;
-
-		}
-
-		.computer-roll3 {
-			padding: 20px;
-		    height: 100px;
-		    background-color: yellow;
-		}
-	}
+  .computer-rolls {
+      float: right;
+      text-align: center;
+      background-color: #75BFBF;
+  }
 }
 
 @-webkit-keyframes rotate {
-    0% {
+    0%, 100% {
         -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    
     }
-    100% {
-        -webkit-transform: rotateX(1800deg) rotateY(360deg) rotateZ(360deg);
+    50% {
+        -webkit-transform: rotateX(900deg) rotateY(360deg) rotateZ(360deg);
     }
 }
 @-webkit-keyframes slide {
-    0% {
+    0%, 100% {
         -webkit-transform: translateX();
     }
-    100% {
-        -webkit-transform: translateX(100px);
+    50% {
+        -webkit-transform: translateX(770px);
     }
 }
 
@@ -113,6 +95,8 @@ body {
   height: 100%;
   background: transparent;
   font-size: 100%;
+  margin-left: -200px;
+  margin-top: 12%;
 
 }
 .face {
@@ -198,7 +182,7 @@ body {
   margin:-2.5em 0 0 -2.5em;
 
   &.active {
-    -webkit-animation: rotate 5s;  
+    -webkit-animation: rotate 2s;  
   }
 
   
@@ -307,6 +291,14 @@ body {
 .cub-1 .side {
   width:0.025em;
 }
+
+/*stuff josh added on sunday*/
+/*in the js, this class is added to the box to make it slide*/
+.slide {
+      -webkit-animation: slide 2s;
+    }
+
+
 
 
 
