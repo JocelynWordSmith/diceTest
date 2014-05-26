@@ -143,26 +143,7 @@
 
 
 
-// (function () {
-//   describe('reset click', function (){
-//     $('.reset').click()
 
-//     it('should set all values to empty strings', function (){
-
-//       expect($('.dice-sides').val()).to.equal('');
-//       expect($('.player-roll1').html().length).to.equal(0);
-//       expect($('.player-roll2').html().length).to.equal(0);
-//       expect($('.player-roll3').html().length).to.equal(0);
-//       expect($('.computer-roll3').html().length).to.equal(0);
-//       expect($('.computer-roll3').html().length).to.equal(0);
-//       expect($('.computer-roll3').html().length).to.equal(0);
-//       expect($('.winner').html().length).to.equal(0);
-//       expect($('.cub-1').hasClass('active')).to.equal(false);
-
-
-//     })
-//   })
-// })();
 
 (function () {
   describe('Roll Compare', function () {
@@ -202,22 +183,6 @@
   });
 })();
 
-// function winRecord () {
-//   if(outcome == 'YOU WIN!'){
-//     p += 1;
-//   }
-//   else if(outcome == 'YOU LOSE!'){
-//     c += 1;
-//   }
-//   else if(outcome == 'ITS A TIE!'){
-//     p += 1;
-//     c += 1;
-//   }
-
-//   $('.player-wins').html('wins: ' + p);
-//   $('.computer-wins').html('wins: ' + c)
-
-// }
 
 (function () {
   describe('win record', function () {
@@ -229,7 +194,97 @@
       },2000);
     })
   })
+})();
+
+(function () {
+  describe('animate die', function () {
+
+    animateDie();
+
+    it('should toggle between active class for cub-1', function () {
+
+        expect($('.cub-1').hasClass('active')).to.equal(true);
+        setTimeout(function() {
+        expect($('.cub-1').hasClass('active')).to.equal(false);
+        },500);
+    })
+    it('should toggle between slide class for tridiv', function () {
+
+        expect($('#tridiv').hasClass('slide')).to.equal(true);
+        setTimeout(function() {
+        expect($('#tridiv').hasClass('slide')).to.equal(false);
+        },1000);
+    })
+  })
+})();
+
+(function () {
+  describe('showScores', function () {
+
+      showScores();
+
+    it('should display the players dice rolls', function () {
+      setTimeout(function() {
+        expect($('.player-roll1').html.length).to.equal(('First Dice Roll: ' + player1.score).length);
+        expect($('.player-roll2').html.length).to.equal(('Second Dice Roll: ' + player2.score).length);
+        expect($('.player-roll3').html.length).to.equal(('Third Dice Roll: ' + player3.score).length);
+      },500);
+    })
+
+      it('should display the computers dice rolls', function () {
+      setTimeout(function() {
+        expect($('.computer-roll1').html.length).to.equal(('First Dice Roll: ' + computer1.score).length);
+        expect($('.computer-roll2').html.length).to.equal(('Second Dice Roll: ' + computer2.score).length);
+        expect($('.computer-roll3').html.length).to.equal(('Third Dice Roll: ' + computer3.score).length);
+      },500);
+
+    })
+  })
+})();
+
+(function () {
+  describe('submit click', function () {
+    var sides = 12;
+    $('.dice-sides').val(sides);
+    $('.submit').click();
+
+    it('should create player dice objects', function () {
+      expect(player1.diceSides).to.equal(sides);
+      expect(player2.diceSides).to.equal(sides);
+      expect(player3.diceSides).to.equal(sides);
+    })
+
+    it('should create computer objects', function () {
+      expect(computer1.diceSides).to.equal(sides);
+      expect(computer2.diceSides).to.equal(sides);
+      expect(computer3.diceSides).to.equal(sides);
+    })
+  })
 })
+
+
+
+
+(function () {
+  describe('reset click', function (){
+    $('.reset').click()
+
+    it('should set all values to empty strings', function (){
+
+      expect($('.dice-sides').val()).to.equal('');
+      expect($('.player-roll1').html().length).to.equal(0);
+      expect($('.player-roll2').html().length).to.equal(0);
+      expect($('.player-roll3').html().length).to.equal(0);
+      expect($('.computer-roll3').html().length).to.equal(0);
+      expect($('.computer-roll3').html().length).to.equal(0);
+      expect($('.computer-roll3').html().length).to.equal(0);
+      expect($('.wintext').html().length).to.equal(0);
+      expect($('.cub-1').hasClass('active')).to.equal(false);
+
+
+    })
+  })
+})();
 
 
 
