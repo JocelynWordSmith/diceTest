@@ -1,68 +1,41 @@
+/* global describe, it */
+
 'use strict';
 
 (function () {
-
-  describe('submit click function', function () {
-      //sets dice sides to ten
-      $('.dice-sides').val(10);
-      //clicks the button
+  describe('Constructor button', function () {
       $('.submit').click()
-
-      expect(player1.diceSides).to.equal(10);
-      expect(computer1.diceSides).to.equal(10);
-    });
-
-    it('should trigger rollCompare', function () {
-      expect(player1.diceSides).to.be.within(1,10);
-      expect(computer1.diceSides).to.be.within(1,10);
-    });
-
-    it('should put the information on the page', function () {
-      expect($('.player-roll1').html().length).to.equal(('player score: ' + player1.score).length);
-      expect($('.player-roll2').html().length).to.equal(('player score: ' + player2.score).length);
-      expect($('.player-roll3').html().length).to.equal(('player score: ' + player3.score).length);
-      expect($('.computer-roll1').html().length).to.equal(('computer score: ' + computer1.score).length);
-      expect($('.computer-roll2').html().length).to.equal(('computer score: ' + computer2.score).length);
-      expect($('.computer-roll3').html().length).to.equal(('computer score: ' + computer3.score).length);
-
-    });
-
-      
-      it("should create a die and store it in the diceSides", function(){
-      // passed
-      // $('.submit').click()
       var inputValue = 5;
       var player1 = new Dice(inputValue);
       var player2 = new Dice(inputValue);
       var player3 = new Dice(inputValue);
+      var computer1 = new Dice(inputValue);
 
-
-
-      it("should create a die and store it in the diceSides", function(){
-      
+      it("should create a die and store it in the diceSides", function(){   
         expect(player1.diceSides).to.equal(5);
         expect(player2.diceSides).to.equal(5);
         expect(player3.diceSides).to.equal(5);
       });
 
-        
-      it("should create a die with sides equal the input value", function(){
-
-        var player3 = new Dice(5);
-        //passed
+      it("should create a die with sides equal the input value", function(){  
         player3.should.have.property('diceSides', 5)
       });
+
+
       
       it('should not be less than 2 OR larger than 20', function () {
-      
         expect(inputValue).to.not.be.above(20);
         expect(inputValue).to.be.below(20);
       }); 
 
       it('should not return a string or NaN', function () {
-      
         expect(inputValue).to.not.equal(NaN);
         expect(inputValue).to.not.equal('string');
+      });
+
+      it('should trigger rollCompare', function () {
+        expect(player1.diceSides).to.be.within(1,10);
+        expect(computer1.diceSides).to.be.within(1,10);
       });
 
       it('should call rollcompare function with arguments', function () {
@@ -72,16 +45,24 @@
         }
       });
 
-      it("Should test for timeout", function(){
-        setTimeout(done, 1000);
-      })
+      it('should render the information on the page', function () {
+        expect($('.player-roll1').html().length).to.equal(('player score: ' + player1.score).length);
+        
+        expect($('.computer-roll1').html().length).to.equal(('computer score: ' + computer1.score).length);
+        
+      });
+
+      it("Should test for timeout", function(done){
+
+          setTimeout(done, 1000);
+      });
 
     });
-
 })();
 
 (function () {
     describe("Dice Constructor", function(){
+
 
       it("should assert that the target is an instance of constructor.", function(){
         
@@ -100,24 +81,21 @@
       it("should accept a number as a string as its argument", function(){
 
         var something = new Dice('10');
-        //console.log(something.diceSides);
         expect(something.diceSides).to.equal(10);
 
-      })
+      });
  
       it("should return its min and max values", function(){
         
         var player1 = new Dice('20');
         expect(player1.roll()).to.be.within(1, player1.diceSides);
-      })
+      });
 
       it("should return roll value to score property", function(){
         
         var player1 = new Dice('20');
         expect(player1.score).to.be.within(1, player1.diceSides);
-      })
+      });
+
     })
 })();
-
-
-

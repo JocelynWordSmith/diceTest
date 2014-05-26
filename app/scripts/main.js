@@ -26,22 +26,18 @@ function rollCompare (playerScore, computerScore) {
 	}
 };
 
-
 //creates dice
 $('.submit').click(function(){
+
 	
 	var sides = $('.dice-sides').val();
 
 	if (sides < 2 || sides > 20) {
-	// alert if number is greater than 20 or less than 2
 	    var err = new ReferenceError('Please select a number between 2-20.')
-  		// alert("Please select a number between 2-20.");
   	} else if (isNaN(sides)) {
-  	// alert if number is greater than 20 or less than 2
   		alert("Entry is not a number. Please select a number between 2-20");
   	} else {
-	
-	//else make a new player and computer
+
 		player1 = new Dice(sides);
 		computer1 = new Dice(sides);
 		
@@ -62,12 +58,11 @@ $('.submit').click(function(){
 		var playerScore = player1.score + player2.score + player3.score;
 		var computerScore = computer1.score + computer2.score + computer3.score;
 
-//calls dice comparison function == added timeout
+	//calls dice comparison function == added timeout
 
 		setTimeout(function() {
 		  rollCompare(playerScore, computerScore);
-		},400);
-		
+		},400);		
 
 	// Displays player roll
 
@@ -83,7 +78,6 @@ $('.submit').click(function(){
 	}
 });
 
-
 $('.reset').click(function() {
 	$('.dice-sides').val('');
 	$('.player-roll1').html('');
@@ -95,3 +89,5 @@ $('.reset').click(function() {
 	$('.winner').html('');
 	$('.cub-1').removeClass('active');
 });
+
+
