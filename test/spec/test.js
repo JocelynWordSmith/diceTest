@@ -59,7 +59,7 @@
         
         var player3 = new Dice(30);
 
-        expect(player3).to.throw(ReferenceError);
+        expect(player3).to.throw(ReferenceError=);
       }); 
 
 
