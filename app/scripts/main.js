@@ -1,28 +1,6 @@
-
-
-// constructor that makes first instance roll
+// constructor that makes roll
 
 function Dice1 (sides) {
-	this.diceSides = parseInt(sides);
-	this.roll = function () {
-		return result = (Math.floor(Math.random() * sides) + 1)
-	};
-	this.score = this.roll();	
-};
-
-// constructor that makes second instance roll
-
-function Dice2 (sides) {
-	this.diceSides = parseInt(sides);
-	this.roll = function () {
-		return result = (Math.floor(Math.random() * sides) + 1)
-	};
-	this.score = this.roll();	
-};
-
-// constructor that makes third instance roll
-
-function Dice3 (sides) {
 	this.diceSides = parseInt(sides);
 	this.roll = function () {
 		return result = (Math.floor(Math.random() * sides) + 1)
@@ -50,32 +28,39 @@ function rollCompare (playerScore, computerScore) {
 	
 //adds or removes class to make dice roll
 
-$('.submit').click(function() {
-	if ($('.cub-1').hasClass('active')) {
-		$('.cub-1').removeClass('active');
-	} else {
-		$('.cub-1').addClass('active');
-	}
-});
-
 //creates dice
 
 $('.submit').click(function() {
 	var sides = $('.dice-sides').val();
 
+
+if (sides < 2 || sides > 20) {
+	// alert if number is greater than 20 or less than 2
+  		alert("Please select a number between 2-20.");
+  	} else if (isNaN(sides)) {
+  	// alert if number is greater than 20 or less than 2
+  		alert("Entry is not a number. Please select a number between 2-20");
+  	} else {
+
 //makes new player and computer dice and scores
 
-	player1 = new Dice1(sides);
-	computer1 = new Dice1(sides);
-	
-	player2 = new Dice2(sides);
-	computer2 = new Dice2(sides);
+		player1 = new Dice1(sides);
+		computer1 = new Dice1(sides);
+		
+		player2 = new Dice1(sides);
+		computer2 = new Dice1(sides);
 
-	player3 = new Dice3(sides);
-	computer3 = new Dice3(sides);
+		player3 = new Dice1(sides);
+		computer3 = new Dice1(sides);
 
-	var playerScore = player1.score + player2.score + player3.score;
-	var computerScore = computer1.score + computer2.score + computer3.score;
+		var playerScore = player1.score + player2.score + player3.score;
+		var computerScore = computer1.score + computer2.score + computer3.score;
+
+		if ($('.cub-1').hasClass('active')) {
+			$('.cub-1').removeClass('active');
+		} else {
+			$('.cub-1').addClass('active');
+		}
 
 //calls dice comparison function == added timeout
 
@@ -84,23 +69,23 @@ $('.submit').click(function() {
 		},400);
 		
 
-// Displays player roll
+	// Displays player roll
 
-	$('.player-roll1').html('player score: ' + player1.score);
-	$('.player-roll2').html('player score: ' + player2.score);
-	$('.player-roll3').html('player score: ' + player3.score);
+		$('.player-roll1').html('player score: ' + player1.score);
+		$('.player-roll2').html('player score: ' + player2.score);
+		$('.player-roll3').html('player score: ' + player3.score);
 
-// Displays computer roll
+	// Displays computer roll
 
-	$('.computer-roll1').html('computer score: ' + computer1.score);
-	$('.computer-roll2').html('computer score: ' + computer2.score);
-	$('.computer-roll3').html('computer score: ' + computer3.score);
+		$('.computer-roll1').html('computer score: ' + computer1.score);
+		$('.computer-roll2').html('computer score: ' + computer2.score);
+		$('.computer-roll3').html('computer score: ' + computer3.score);
 
+	}
 });
 
 
 $('.reset').click(function() {
-	$('.dice-sides').val('');
 	$('.player-roll1').html('');
 	$('.player-roll2').html('');
 	$('.player-roll3').html('');
@@ -110,3 +95,6 @@ $('.reset').click(function() {
 	$('.winner').html('');
 	$('.cub-1').removeClass('active');
 });
+
+
+
