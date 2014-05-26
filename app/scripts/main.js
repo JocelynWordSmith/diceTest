@@ -124,7 +124,7 @@ $('.reset').click(function() {
 	$('.computer-roll2').html('');
 	$('.computer-roll3').html('');
 	$('.computer-wins').html('');
-	$('.winner').html('');
+	$('.wintext').html('');
 	$('.cub-1').removeClass('active');
 	var p = 0, c = 0; 
 });
