@@ -25,6 +25,7 @@
       expect($('.computer-roll2').html().length).to.equal(('computer score: ' + computer2.score).length);
       expect($('.computer-roll3').html().length).to.equal(('computer score: ' + computer3.score).length);
 
+      // done()
     });
 
       
@@ -118,8 +119,8 @@
         expect(player1.score).to.be.within(1, player1.diceSides);
       })
     })
+// done();
 })();
-
 (function () {
   describe('reset click', function (){
     
