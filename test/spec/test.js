@@ -7,7 +7,7 @@
       $('.dice-sides').val(10);
       //clicks the button
       $('.submit').click();
-
+    
       expect(player1.diceSides).to.equal(10);
       expect(computer1.diceSides).to.equal(10);
     });
@@ -18,7 +18,7 @@
     });
 
     it('should put the information on the page', function () {
-      expect($('.player-roll1').html().length).to.equal(('player score: ' + player1.score).length);
+      expect($('.player-roll1').html().length).to.equal((('player score: ' + player1.score).length));
       expect($('.player-roll2').html().length).to.equal(('player score: ' + player2.score).length);
       expect($('.player-roll3').html().length).to.equal(('player score: ' + player3.score).length);
       expect($('.computer-roll1').html().length).to.equal(('computer score: ' + computer1.score).length);
@@ -76,8 +76,9 @@
         setTimeout(done, 1000);
       })
 
-    });
 
+
+    });
 })();
 
 (function () {
@@ -119,7 +120,7 @@
     })
 })();
 
-setTimeout(function () {
+(function () {
   describe('reset click', function (){
     
 
@@ -139,7 +140,8 @@ setTimeout(function () {
       expect($('.winner').html().length).to.equal(0);
       expect($('.cub-1').hasClass('active')).to.equal(false);
 
+
     })
   })
-},400)();
+})();
 
