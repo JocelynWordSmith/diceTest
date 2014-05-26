@@ -12,8 +12,8 @@ var playerScore, computerScore;
 function rollCompare () {
 
 	//sets total scores to be compared
-	var playerScore = player1.score + player2.score + player3.score;
-	var computerScore = computer1.score + computer2.score + computer3.score;
+	playerScore = player1.score + player2.score + player3.score;
+	computerScore = computer1.score + computer2.score + computer3.score;
 
 	if (playerScore > computerScore) {
 		outcome = "YOU WIN!";

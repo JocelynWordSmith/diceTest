@@ -141,6 +141,29 @@
 //
 //
 
+
+
+// (function () {
+//   describe('reset click', function (){
+//     $('.reset').click()
+
+//     it('should set all values to empty strings', function (){
+
+//       expect($('.dice-sides').val()).to.equal('');
+//       expect($('.player-roll1').html().length).to.equal(0);
+//       expect($('.player-roll2').html().length).to.equal(0);
+//       expect($('.player-roll3').html().length).to.equal(0);
+//       expect($('.computer-roll3').html().length).to.equal(0);
+//       expect($('.computer-roll3').html().length).to.equal(0);
+//       expect($('.computer-roll3').html().length).to.equal(0);
+//       expect($('.winner').html().length).to.equal(0);
+//       expect($('.cub-1').hasClass('active')).to.equal(false);
+
+
+//     })
+//   })
+// })();
+
 (function () {
   describe('Roll Compare', function () {
     $('.dice-sides').val(12);
@@ -148,33 +171,19 @@
 
 
     it('should total the three dice rolls for a total score', function () {
-
-      expect(playerScore).to.equal(player1.score + player2.score + player3.score);
-      expect(computerScore).to.equal(computer1.score + computer2.score + computer3.score);
-
+      setTimeout(function() {
+        expect(playerScore).to.equal(player1.score + player2.score + player3.score);
+        expect(computerScore).to.equal(computer1.score + computer2.score + computer3.score);
+      },2000);        
     })
-  })
-})();
 
+    it('should display the outcome and scores', function () {
 
-(function () {
-  describe('reset click', function (){
-    $('.reset').click()
-
-    it('should set all values to empty strings', function (){
-
-      expect($('.dice-sides').val()).to.equal('');
-      expect($('.player-roll1').html().length).to.equal(0);
-      expect($('.player-roll2').html().length).to.equal(0);
-      expect($('.player-roll3').html().length).to.equal(0);
-      expect($('.computer-roll3').html().length).to.equal(0);
-      expect($('.computer-roll3').html().length).to.equal(0);
-      expect($('.computer-roll3').html().length).to.equal(0);
-      expect($('.winner').html().length).to.equal(0);
-      expect($('.cub-1').hasClass('active')).to.equal(false);
-
-
+      setTimeout(function() {
+      expect($('.wintext').html.length).to.equal('Player total: ' + playerScore + '<br>Computer total: '+ computerScore + '<br>'  + outcome).length;
+      },2000);
     })
+
   })
 })();
 
@@ -192,6 +201,35 @@
     })
   });
 })();
+
+// function winRecord () {
+//   if(outcome == 'YOU WIN!'){
+//     p += 1;
+//   }
+//   else if(outcome == 'YOU LOSE!'){
+//     c += 1;
+//   }
+//   else if(outcome == 'ITS A TIE!'){
+//     p += 1;
+//     c += 1;
+//   }
+
+//   $('.player-wins').html('wins: ' + p);
+//   $('.computer-wins').html('wins: ' + c)
+
+// }
+
+(function () {
+  describe('win record', function () {
+
+    it('should display the current score', function () {
+      setTimeout(function() {
+      expect($('.player-wins').html.length).to.equal('wins: ' + p).length;
+      expect($('.computer-wins').html.length).to.equal('wins: ' + c).length;
+      },2000);
+    })
+  })
+})
 
 
 
