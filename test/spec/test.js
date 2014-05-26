@@ -1,4 +1,65 @@
-'use strict';
+// 'use strict';
+
+// (function () {
+//   describe('Dice Constructor', function () {
+//     //sets dice sides to twelve
+//     var testDice = new Dice(12);
+
+//     it('should set dicesides attributes to input value', function () {
+//       expect(testDice.diceSides).to.equal(12);
+//     });
+
+//     it('should set score attribute to a roll between 1 and the input', function () {
+//       expect(testDice.diceSides).to.be.within(1,12);
+//     })
+//   });
+// })();
+
+// (function () {
+//   describe('Roll Compare', function () {
+//     var sides = 12;
+
+//     var player1 = new Dice(sides);
+//     var player2 = new Dice(sides);
+//     var player3 = new Dice(sides);
+    
+//     var computer1 = new Dice(sides);
+//     var computer2 = new Dice(sides);
+//     var computer3 = new Dice(sides);
+
+//     rollCompare();
+
+//     it('should total the three dice rolls for a total score', function () {
+
+//       expect(playerScore).to.equal(player1.score + player2.score + player3.score);
+//       expect(computerScore).to.equal(computer1.score + computer2.score + computer3.score);
+
+//     })
+//   })
+// })();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 (function () {
 
@@ -121,28 +182,28 @@
     })
 // done();
 })();
-(function () {
-  describe('reset click', function (){
+// (function () {
+//   describe('reset click', function (){
     
 
       
 
-    $('.reset').click()
+//     $('.reset').click()
 
-    it('should set all values to empty strings', function (){
+//     it('should set all values to empty strings', function (){
 
-      expect($('.dice-sides').val()).to.equal('');
-      expect($('.player-roll1').html().length).to.equal(0);
-      expect($('.player-roll2').html().length).to.equal(0);
-      expect($('.player-roll3').html().length).to.equal(0);
-      expect($('.computer-roll3').html().length).to.equal(0);
-      expect($('.computer-roll3').html().length).to.equal(0);
-      expect($('.computer-roll3').html().length).to.equal(0);
-      expect($('.winner').html().length).to.equal(0);
-      expect($('.cub-1').hasClass('active')).to.equal(false);
+//       expect($('.dice-sides').val()).to.equal('');
+//       expect($('.player-roll1').html().length).to.equal(0);
+//       expect($('.player-roll2').html().length).to.equal(0);
+//       expect($('.player-roll3').html().length).to.equal(0);
+//       expect($('.computer-roll3').html().length).to.equal(0);
+//       expect($('.computer-roll3').html().length).to.equal(0);
+//       expect($('.computer-roll3').html().length).to.equal(0);
+//       expect($('.winner').html().length).to.equal(0);
+//       expect($('.cub-1').hasClass('active')).to.equal(false);
 
 
-    })
-  })
-})();
+//     })
+//   })
+// })();
 

@@ -2,11 +2,12 @@
 function Dice (sides) {
 	this.diceSides = parseInt(sides);
 	this.roll = function () {
-		return result = (Math.floor(Math.random() * sides) + 1)
+		return result = (Math.floor(Math.random() * sides) + 1);
 	};
 	this.score = this.roll();	
 };
 
+var playerScore, computerScore;
 //defines function to compare dice
 function rollCompare () {
 

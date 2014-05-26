@@ -14,25 +14,29 @@
 <!--  -->
 <!--  -->
 <div class="content">
-    <input class="dice-sides" value="10"></input>
+    <input class="dice-sides" placeholder="Type Number 2-20"></input>
     <button class="submit">Submit</button>
     <button class="reset">Reset</button>
 
     <div class="player-rolls"> 
-        <div class="player-roll1"></div>
-        <div class="player-roll2"></div>
-        <div class="player-roll3"></div>
+        <div class="player-roll1 score-box"></div>
+        <div class="player-roll2 score-box"></div>
+        <div class="player-roll3 score-box"></div>
+        <div class="player-wins score-box"></div>
     </div>
-    <div class="winner"></div>
+    <div class="winner">
+        <div class="wintext"></div>
+    </div>
 
     <div class="computer-rolls">
-        <div class="computer-roll1"></div>
-        <div class="computer-roll2"></div>
-        <div class="computer-roll3"></div>
+        <div class="computer-roll1 score-box"></div>
+        <div class="computer-roll2 score-box"></div>
+        <div class="computer-roll3 score-box"></div>
+        <div class="computer-wins score-box"></div>
     </div>
 
-
     <div id="tridiv">
+    <div class="bound">
       <div class="scene" style="-webkit-transform:rotateX(873deg) rotateY(-1766deg); -moz-transform:rotateX(873deg) rotateY(-1766deg); -ms-transform:rotateX(873deg) rotateY(-1766deg); transform:rotateX(873deg) rotateY(-1766deg); ">
         <div class="shape cuboid-1 cub-1">
           <div class="face ft"></div>
@@ -63,6 +67,7 @@
           </div>
         </div>
       </div>
+    </div>
     </div>
 </div>
 
