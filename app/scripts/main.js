@@ -29,7 +29,6 @@ function rollCompare (playerScore, computerScore) {
 //creates dice
 $('.submit').click(function(){
 	
-
 	var sides = $('.dice-sides').val();
 
 	if (sides < 2 || sides > 20) {
