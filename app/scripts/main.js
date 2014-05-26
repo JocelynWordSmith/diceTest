@@ -13,16 +13,16 @@ function Dice (sides) {
 function rollCompare (playerScore, computerScore) {
 
 	if (playerScore > computerScore) {
-		outcome = "VICTORY!";
-		$('.winner').html('player score: '+ playerScore + '<br>'  + outcome);
+		outcome = "YOU WIN!";
+		$('.winner').html('player score: ' + playerScore + '<br>computer score: '+ computerScore + '<br>'  + outcome);
 	}
 	else if (playerScore < computerScore) {
-		outcome = "FAILURE!";
-		$('.winner').html('player score: ' + playerScore + '<br>'  + outcome);
+		outcome = "YOU LOSE!";
+		$('.winner').html('player score: ' + playerScore + '<br>computer score: '+ computerScore + '<br>'  + outcome);
 	}
 	else if (playerScore == computerScore) {
 		outcome = "ITS A TIE!";
-		$('.winner').html('player score: ' + playerScore + '<br>' + outcome);
+		$('.winner').html('player score: ' + playerScore + '<br>computer score: '+ computerScore + '<br>'  + outcome);
 	}
 };
 
