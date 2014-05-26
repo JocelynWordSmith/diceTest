@@ -94,6 +94,14 @@ body {
         -webkit-transform: rotateX(1800deg) rotateY(360deg) rotateZ(360deg);
     }
 }
+@-webkit-keyframes slide {
+    0% {
+        -webkit-transform: translateX();
+    }
+    100% {
+        -webkit-transform: translateX(100px);
+    }
+}
 
 /* /!\ You need to add vendor prefixes in order to render the CSS properly (or simply use http://leaverou.github.io/prefixfree/) /!\ */ 
 
@@ -105,6 +113,7 @@ body {
   height: 100%;
   background: transparent;
   font-size: 100%;
+
 }
 .face {
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 1);
@@ -189,8 +198,10 @@ body {
   margin:-2.5em 0 0 -2.5em;
 
   &.active {
-    -webkit-animation: rotate 5s; 
+    -webkit-animation: rotate 5s;  
   }
+
+  
 }
 .cub-1 .ft {
   transform:translateZ(2.5em);

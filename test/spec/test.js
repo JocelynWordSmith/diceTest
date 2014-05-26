@@ -6,7 +6,7 @@
       //sets dice sides to ten
       $('.dice-sides').val(10);
       //clicks the button
-      $('.submit').click()
+      $('.submit').click();
 
       expect(player1.diceSides).to.equal(10);
       expect(computer1.diceSides).to.equal(10);
@@ -119,5 +119,27 @@
     })
 })();
 
+setTimeout(function () {
+  describe('reset click', function (){
+    
 
+      
+
+    $('.reset').click()
+
+    it('should set all values to empty strings', function (){
+
+      expect($('.dice-sides').val()).to.equal('');
+      expect($('.player-roll1').html().length).to.equal(0);
+      expect($('.player-roll2').html().length).to.equal(0);
+      expect($('.player-roll3').html().length).to.equal(0);
+      expect($('.computer-roll3').html().length).to.equal(0);
+      expect($('.computer-roll3').html().length).to.equal(0);
+      expect($('.computer-roll3').html().length).to.equal(0);
+      expect($('.winner').html().length).to.equal(0);
+      expect($('.cub-1').hasClass('active')).to.equal(false);
+
+    })
+  })
+},400)();
 
