@@ -83,42 +83,36 @@
 
 (function () {
     describe('rollCompare function', function () {
-        describe('should return the winner of the roll', function () {
-            it('as player if player.score is greater than computer.score', function () {
+       
+        it('should return winner as player if player.score is greater than computer.score', function () {
 
-              $('.submit').click();
+          $('.submit').click();
 
-              var player = 4;
-              var computer = 2;
+          var player = 4;
+          var computer = 2;
 
-              expect(player).to.be.above(computer);
-            });
+          expect(player).to.be.above(computer);
         });
+       
+      it('should return winner as computer if computer.score is greater than player.score', function () {
 
-        describe('should return winner of the roll', function () {
-            it('as computer if computer.score is greater than player.score', function () {
+        $('.submit').click();
 
-              $('.submit').click();
+        var player = 2;
+        var computer = 4;
 
+        expect(computer).to.be.above(player);
+      });
+        
+      it('should return tie if player.score is equal to computer.score', function () {
 
-              var player = 2;
-              var computer = 4;
+        $('.submit').click();
 
-              expect(computer).to.be.above(player);
-            });
-        });
-
-        describe('should return a tie', function () {
-            it('if player.score is equal to computer.score', function () {
-
-              $('.submit').click();
-
-              var player = 10;
-              var computer = 10;
-
-              expect(player).to.equal(computer);
-            });
-        });
+        var player = 10;
+        var computer = 10;
+ 
+        expect(player).to.equal(computer);
+      });      
     });
 })();
 
@@ -131,9 +125,7 @@
       expect($('.player-roll1').html()).to.equal();
       expect($('.player-roll2').html()).to.equal();
       expect($('.player-roll3').html()).to.equal();
-
     });
- 
 
     it('should reset computer score', function() {
 
@@ -149,7 +141,6 @@
       $('.reset').click();
 
       expect($('.winner').html()).to.equal();
-
     })
 
     it('should remove active class from cube', function() {
@@ -157,9 +148,7 @@
       $('.reset').click();
 
       expect($('.cub-1').removeClass()).to.not.equal("active")
-
     })
-
   });
 })();
 
