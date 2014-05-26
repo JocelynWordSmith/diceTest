@@ -126,7 +126,8 @@ $('.reset').click(function() {
 	$('.computer-wins').html('');
 	$('.wintext').html('');
 	$('.cub-1').removeClass('active');
-	var p = 0, c = 0; 
+	p = 0, 
+	c = 0; 
 });
 
 
