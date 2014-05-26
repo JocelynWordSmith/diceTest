@@ -1,60 +1,74 @@
 
-(function () {
+
 'use strict';
-	describe('submit click function', function () {
-			//sets dice sides to ten
-			$('.dice-sides').val(10);
-			//clicks the button
-			$('.submit').click()
+(function () {
 
-		it('should set player.sides and computer.sides to the input value when clicked', function () {
-			expect(parseInt(player.diceSides)).to.equal(10);
-			expect(parseInt(computer.diceSides)).to.equal(10);
-		});
+  describe('submit click function', function () {
+      //sets dice sides to ten
+      $('.dice-sides').val(10);
+      //clicks the button
+      $('.submit').click()
 
-		it('should trigger rollCompare', function () {
-			expect(parseInt(player.diceSides)).to.be.within(1,10);
-			expect(parseInt(computer.diceSides)).to.be.within(1,10);
-		});
-		it('should put the information on the page', function () {
-			expect($('.answer').html().length).to.equal(('player score: ' + player.score +'<br>computer score: ' + computer.score + '<br> ' + outcome).length);
+    it('should set player.sides and computer.sides to the input value when clicked', function () {
+      expect(player1.diceSides).to.equal(10);
+      expect(computer1.diceSides).to.equal(10);
+    });
+
+    it('should trigger rollCompare', function () {
+      expect(player1.diceSides).to.be.within(1,10);
+      expect(computer1.diceSides).to.be.within(1,10);
+    });
+    it('should put the information on the page', function () {
+      expect($('.player-roll1').html().length).to.equal(('player score: ' + player1.score).length);
+      expect($('.player-roll2').html().length).to.equal(('player score: ' + player2.score).length);
+      expect($('.player-roll3').html().length).to.equal(('player score: ' + player3.score).length);
+      expect($('.computer-roll1').html().length).to.equal(('computer score: ' + computer1.score).length);
+      expect($('.computer-roll2').html().length).to.equal(('computer score: ' + computer2.score).length);
+      expect($('.computer-roll3').html().length).to.equal(('computer score: ' + computer3.score).length);
+
+    })
+  })
+})()
 
 'use strict';
 
 (function () {
   describe('Constructor button', function () {
+       
       
       it("should create a die and store it in the diceSides", function(){
       // passed
-        var player1 = new Dice1(5);
-        var player2 = new Dice2(5);
-        var player3 = new Dice3(5);
+        var player1 = new Dice(5);
+        var player2 = new Dice(5);
+        var player3 = new Dice(5);
 
         expect(player1.diceSides).to.equal(5);
         expect(player2.diceSides).to.equal(5);
         expect(player3.diceSides).to.equal(5);
       });
 
+        
       it("should create a die with sides equal the input value", function(){
-        //passed
-        var inputValue = 5;
-        var player3 = new Dice3(inputValue);
-        player3.should.have.property('diceSides', 5)
 
+        var player3 = new Dice(5);
+        //passed
+        player3.should.have.property('diceSides', 5)
       });
       
       it('should give alert if less than 2 OR larger than 20', function () {
-        /*var inputValue = 90;
-        expect(inputValue(21,100)).to.equal(alert("Please select a number between 2-20."));
-        expect(inputValue(1,-100)).to.equal(alert("Please select a number between 2-20.")); */
+        
+        var player3 = new Dice(30);
 
-          expect(inputValue).to.not.be.above(20);
+        expect(player3).to.throw(ReferenceError);
       }); 
 
 
       it('should give alert if NaN', function () {
 
-        expect(inputValue(NaN)).to.equal();
+        var inputValue = NaN;
+        var player3 = new Dice(inputValue);
+
+        expect(inputValue(NaN)).to.equal(alert("Entry is not a number. Please select a number between 2-20"));
       
       });
 
