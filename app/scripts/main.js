@@ -57,6 +57,7 @@ $('.submit').click(function(){
 			$('.cub-1').removeClass('active');
 		} else {
 			$('.cub-1').addClass('active');
+			$('.bound').addClass('slide');
 		}
 
 		var playerScore = player1.score + player2.score + player3.score;
