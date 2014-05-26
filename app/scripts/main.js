@@ -47,8 +47,8 @@ function winRecord () {
 		c += 1;
 	}
 
-	$('.player-wins').html('wins: ' + p);
-	$('.computer-wins').html('wins: ' + c)
+	$('.player-wins').html('Player wins: ' + p);
+	$('.computer-wins').html('Computer wins: ' + c)
 
 }
 
@@ -67,16 +67,16 @@ function showScores () {
 
 	// Displays player roll
 	setTimeout(function() {
-	$('.player-roll1').html('First Dice Roll: ' + player1.score);
-	$('.player-roll2').html('Second Dice Roll: ' + player2.score);
-	$('.player-roll3').html('Third Dice Roll: ' + player3.score);
+	$('.player-roll1').html('Player <br>First Dice Roll: ' + player1.score);
+	$('.player-roll2').html('Player <br>Second Dice Roll: ' + player2.score);
+	$('.player-roll3').html('Player <br>Third Dice Roll: ' + player3.score);
 	},500);
 
 	// Displays computer roll
 	setTimeout(function() {
-	$('.computer-roll1').html('First Dice Roll: ' + computer1.score);
-	$('.computer-roll2').html('Second Dice Roll: ' + computer2.score);
-	$('.computer-roll3').html('Third Dice Roll: ' + computer3.score);
+	$('.computer-roll1').html('Computer <br>First Dice Roll: ' + computer1.score);
+	$('.computer-roll2').html('Computer <br>Second Dice Roll: ' + computer2.score);
+	$('.computer-roll3').html('Computer <br>Third Dice Roll: ' + computer3.score);
 	},1000);
 };
 
