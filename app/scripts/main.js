@@ -43,8 +43,8 @@ function winRecord () {
 		c += 1;
 	}
 	else if(outcome == 'ITS A TIE!'){
-		p += 1;
-		c += 1;
+		p += 0;
+		c += 0;
 	}
 
 	$('.player-wins').html('Player wins: ' + p);
